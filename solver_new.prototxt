@@ -17,4 +17,3 @@ snapshot_prefix: "finetuned_salicon"
 solver_mode: GPU
 solver_type: ADADELTA
 delta: 1e-6
-
