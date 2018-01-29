@@ -1,4 +1,4 @@
-from Salicon import Salicon
+# from Salicon import Salicon
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -10,7 +10,8 @@ class test_salicon():
     """
 
     def __init__(self):
-        self.sal = Salicon()
+        # self.sal = Salicon()
+        pass
 
     def get_saliency_one_image(self, image_path):
         """
@@ -23,6 +24,27 @@ class test_salicon():
         plt.show()
 
         return map
+
+
+    def run_cube_6_in_6(self):
+        """
+        get jianyi's cube_6_in_6
+        """
+        import os
+
+        image_path = '/home/ml/OpenSALICON/cube_6_in_6/'
+        all_file =  os.listdir(image_path)
+
+        for i_step in range(len(all_file)):
+            for i_image in range(6):
+                image_path = all_file[ i_step ] + '/' + 'BlueWorld_%03d'%i_image + '.jpg'
+                # img = imageio.imread(image_path)
+                print('>>>>>>>>>>>>>>>>: ', image_path)
+
+
+
+        print(">>>>>>>>>>>>>: ", all_file)
+
 
     def save_heatmap(self,heatmap,path,name):
         """
@@ -46,4 +68,4 @@ class test_salicon():
 
 if __name__ == '__main__':
     sal = test_salicon()
-    sal.run()
+    sal.run_cube_6_in_6()
